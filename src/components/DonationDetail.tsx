@@ -77,7 +77,7 @@ const DonationDetail = () => {
                 {donationDetail?.title}
               </h3>
             </div>
-            <div>
+            <div className="mb-10">
               <div
                 className="text-black not-italic font-normal"
                 dangerouslySetInnerHTML={{
@@ -86,7 +86,7 @@ const DonationDetail = () => {
               ></div>
             </div>
 
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center fixed bottom-0 w-full max-w-xl">
               <button
                 type="button"
                 className="w-1/2 text-white bg-[#3F85FB] hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
