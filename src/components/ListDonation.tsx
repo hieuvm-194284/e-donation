@@ -50,13 +50,14 @@ const ListDonations = () => {
         <div className="flex flex-col gap-[10px] justify-between">
           <div className="flex flex-col gap-2 justify-between bg-white p-4 border border-y-[1px] border-solid">
             <h3 className="text-black text-[18px] not-italic font-semibold leading-[27px]">
-              E-Donation - Thiện nguyện mỗi ngày
+              Sứ Mệnh Yêu Thương - Kết nối trái tim, lan tỏa hạnh phúc
             </h3>
             <div className="flex justify-between items-center">
               <p className="text-black text-[16px] not-italic font-normal leading-[24px]">
-                E-Donation là tính năng tập hợp tất cả các tổ chức đang gây quỹ
-                từ thiện trên Lịch Việt. Nơi bạn có thể thực hiện “Sống tốt”
-                bằng cách quyên góp.
+                &ldquo;Sứ Mệnh Yêu Thương&ldquo; là nền tảng ý nghĩa giúp bạn dễ
+                dàng chung tay quyên góp cho những hoàn cảnh khó khăn, được Lịch
+                Việt phối hợp với các tổ chức thiện nguyện uy tín, đảm bảo rõ
+                ràng và minh bạch
               </p>
               <Image
                 src="/images/donation.png"
@@ -68,7 +69,7 @@ const ListDonations = () => {
             <div>
               <Link
                 className="text-[#007AFF] text-[16px] not-italic font-medium leading-4 underline underline-offset-4"
-                href={'/terms'}
+                href={"/terms"}
               >
                 Điều khoản & chính sách
               </Link>
@@ -86,20 +87,25 @@ const ListDonations = () => {
                     key={item?.id}
                     className="flex flex-col gap-4 justify-between bg-white p-4"
                   >
-                    <div className="flex justify-center border rounded-lg relative z-1 max-w-screen-xl h-[227px]">
-                      <Image
-                        src={item?.image_banner}
-                        layout="fill"
-                        objectFit="cover"
-                        alt="banner"
-                        className="rounded-lg"
-                        priority
-                      />
-                    </div>
+                    <div
+                      className="flex flex-col gap-4 justify-between"
+                      onClick={() => router.push(`donation-detail/${item?.id}`)}
+                    >
+                      <div className="flex justify-center border rounded-lg relative z-1 max-w-screen-xl h-[227px]">
+                        <Image
+                          src={item?.image_banner}
+                          layout="fill"
+                          objectFit="cover"
+                          alt="banner"
+                          className="rounded-lg"
+                          priority
+                        />
+                      </div>
 
-                    <h3 className="text-black text-[18px] not-italic font-semibold leading-[27px]">
-                      {item?.description}
-                    </h3>
+                      <h3 className="text-black text-[18px] not-italic font-semibold leading-[27px]">
+                        {item?.description}
+                      </h3>
+                    </div>
 
                     <div className="flex justify-start items-center gap-4">
                       <Image
