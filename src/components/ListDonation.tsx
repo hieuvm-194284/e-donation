@@ -41,7 +41,7 @@ const ListDonations = () => {
             </svg>
           </div>
 
-          <h3 className="text-[17px] not-italic font-semibold leading-[21px]">
+          <h3 className="text-white text-[17px] not-italic font-semibold leading-[21px]">
             Quyên góp
           </h3>
 

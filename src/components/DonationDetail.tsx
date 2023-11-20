@@ -53,7 +53,7 @@ const DonationDetail = () => {
             </svg>
           </button>
 
-          <h3 className="text-[17px] not-italic font-semibold leading-[21px]">
+          <h3 className="text-white text-[17px] not-italic font-semibold leading-[21px]">
             {donationDetail?.title || "Quyên góp"}
           </h3>
           <div className="w-6"></div>
@@ -76,11 +76,6 @@ const DonationDetail = () => {
               <h3 className="text-black text-[18px] not-italic font-semibold leading-[27px]">
                 {donationDetail?.title}
               </h3>
-            </div>
-            <div>
-              <p className="text-black text-[16px] not-italic font-normal leading-[24px]">
-                {donationDetail?.description}
-              </p>
             </div>
             <div>
               <div
