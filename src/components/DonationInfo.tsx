@@ -132,9 +132,7 @@ const DonationInfo = () => {
                       {donationDetail?.acount_bank}
                     </span>
                   </p>
-                  <CopyToClipboard
-                    text={donationDetail?.acount_bank}
-                  >
+                  <CopyToClipboard text={donationDetail?.acount_bank}>
                     <button className="flex justify-center gap-1 border px-2 py-1 rounded-full">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -239,11 +237,17 @@ const DonationInfo = () => {
                   </p>
                 </div>
                 <div className="flex flex-col justify-between px-5 gap-2">
-                  <p className="text-black text-[16px] not-italic font-normal leading-[24px]">
-                    Nếu bạn muốn nhận chứng từ khấu trừ thuế, xin vui lòng gửi
-                    email đến tổ chức từ thiện : {donationDetail?.title}:&nbsp;
-                    {donationDetail?.email}
-                  </p>
+                  <div>
+                    <p className="text-black text-[16px] not-italic font-normal leading-[24px]">
+                      Nếu bạn muốn nhận chứng từ khấu trừ thuế, xin vui lòng gửi
+                      email đến tổ chức từ thiện :
+                    </p>
+                    <p className="text-black text-[16px] not-italic font-normal leading-[24px]">
+                      {donationDetail?.title}:&nbsp;
+                      {donationDetail?.email}
+                    </p>
+                  </div>
+
                   <div className="flex flex-col justify-between">
                     <p className="text-black text-[16px] not-italic font-semibold leading-[24px]">
                       Với các thông tin sau:

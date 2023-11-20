@@ -23,29 +23,10 @@ const ListDonations = () => {
   return (
     <>
       <div className="max-w-xl">
-        <div className="flex justify-between bg-[#005CAC] max-w-xl w-full p-4">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M6 12.5L16.5 2L18.5 4L10 12.5L18.5 21L16.5 23L6 12.5Z"
-                fill="white"
-              />
-            </svg>
-          </div>
-
-          <h3 className="text-white text-[17px] not-italic font-semibold leading-[21px]">
+        <div className="flex justify-center bg-[#005CAC] max-w-xl w-full p-4">
+          <h3 className="text-white text-center text-[17px] not-italic font-semibold leading-[21px]">
             Quyên góp
           </h3>
-
-          <div className="w-6"></div>
         </div>
         <div className="flex flex-col gap-[10px] justify-between">
           <div className="flex flex-col gap-2 justify-between bg-white p-4 border border-y-[1px] border-solid">
