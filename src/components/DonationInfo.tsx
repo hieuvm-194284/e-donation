@@ -163,9 +163,6 @@ const DonationInfo = () => {
                   </span>
                 </p>
                 <p className="text-black text-[16px] not-italic font-normal leading-[24px]">
-                  C.Nhánh: {donationDetail?.address}
-                </p>
-                <p className="text-black text-[16px] not-italic font-normal leading-[24px]">
                   Chủ TK: {donationDetail?.acount_holder}
                 </p>
                 <p className="text-black text-[16px] not-italic font-normal leading-[24px]">
@@ -237,14 +234,14 @@ const DonationInfo = () => {
                   </div>
 
                   <p className="text-[#222222] text-[18px] not-italic font-semibold leading-[27px] px-5">
-                    Cảm ơn bạn - Bạn vừa làm một điều tốt để giúp hàng ngàn người
-                    cơ nhỡ ngoài kia.
+                    Cảm ơn bạn - Bạn vừa làm một điều tốt để giúp hàng ngàn
+                    người cơ nhỡ ngoài kia.
                   </p>
                 </div>
                 <div className="flex flex-col justify-between px-5 gap-2">
                   <p className="text-black text-[16px] not-italic font-normal leading-[24px]">
                     Nếu bạn muốn nhận chứng từ khấu trừ thuế, xin vui lòng gửi
-                    email đến tổ chức từ thiện : {donationDetail?.title}:
+                    email đến tổ chức từ thiện : {donationDetail?.title}:&nbsp;
                     {donationDetail?.email}
                   </p>
                   <div className="flex flex-col justify-between">

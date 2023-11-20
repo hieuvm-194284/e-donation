@@ -72,7 +72,7 @@ const Terms = () => {
               trực tiếp tới các Tổ chức thông qua địa chỉ email được Lịch Việt
               công bố trong phần mô tả thông tin của từng Tổ chức tương ứng.
             </li>
-            <li className="bg-lime-400">
+            <li>
               - Lịch Việt hoàn toàn không chịu trách nhiệm liên quan đến các vấn
               đề chuyển khoản quyên góp của Người ủng hộ. Trong trường hợp phát
               sinh lỗi hoặc bất kỳ vấn đề gì liên quan đến việc chuyển khoản,
