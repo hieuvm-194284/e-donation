@@ -202,7 +202,6 @@ const DonationInfo = () => {
             </div>
             <Modal
               open={isModalOpen}
-              closeIcon={null}
               onCancel={handleCancel}
               wrapClassName="max-w-xl"
               centered
