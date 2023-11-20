@@ -1,10 +1,33 @@
+import { useRouter } from "next/router";
 const Terms = () => {
+  const router = useRouter();
   return (
     <>
+      <div className="flex justify-between bg-[#005CAC] max-w-xl w-full p-4">
+        <button onClick={() => router.back()}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M6 12.5L16.5 2L18.5 4L10 12.5L18.5 21L16.5 23L6 12.5Z"
+              fill="white"
+            />
+          </svg>
+        </button>
+
+        <h3 className="text-white text-[17px] not-italic font-semibold leading-[21px]">
+          Điều khoản sử dụng
+        </h3>
+
+        <div className="w-6"></div>
+      </div>
       <div className="flex flex-col max-w-xl bg-white text-base text-black text-justify gap-4 p-4">
-        <div>
-          <p className="text-xl font-bold text-center">Điều khoản sử dụng</p>
-        </div>
         <div>
           <p>
             Xin vui lòng đọc kỹ trước khi quyết định Quyên góp. Khi truy cập, sử
