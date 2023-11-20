@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useEffect, useState } from "react";
 
 const DonationInfo = () => {
@@ -54,7 +55,7 @@ const DonationInfo = () => {
           </button>
 
           <h3 className="text-white text-[17px] not-italic font-semibold leading-[21px]">
-            {donationDetail?.title || "Quyên góp"}
+            Quyên góp
           </h3>
 
           <div className="w-6"></div>
@@ -124,37 +125,36 @@ const DonationInfo = () => {
                 Hoặc đóng góp trực tiếp vào số tài khoản
               </p>
               <div className="flex flex-col justify-between">
-                <div className="flex justify-between">
+                <div className="flex justify-between items-center">
                   <p className="text-black text-[16px] not-italic font-normal leading-[24px]">
                     Số Tài khoản:&nbsp;
                     <span className="inline-block text-black text-[16px] not-italic font-semibold leading-[24px]">
                       {donationDetail?.acount_bank}
                     </span>
                   </p>
-                  {/* <button
-                  className="flex justify-center gap-1 border p-1 rounded-full"
-                  onClick={() => {
-                    navigator?.clipboard?.writeText("STK");
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="18"
-                    viewBox="0 0 16 18"
-                    fill="none"
+                  <CopyToClipboard
+                    text={donationDetail?.acount_bank}
                   >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M13.4318 0.494262L15.2557 2.31824C15.5722 2.6347 15.75 3.06392 15.75 3.51148V12.9375C15.75 13.8695 14.9945 14.625 14.0625 14.625H11.25V16.3125C11.25 17.2445 10.4945 18 9.5625 18H1.6875C0.755508 18 0 17.2445 0 16.3125V5.0625C0 4.13051 0.755508 3.375 1.6875 3.375H4.5V1.6875C4.5 0.755508 5.25551 0 6.1875 0H12.2385C12.6861 2.34027e-06 13.1153 0.177794 13.4318 0.494262ZM1.89844 16.3125H9.35156C9.46806 16.3125 9.5625 16.2181 9.5625 16.1016V14.625H6.1875C5.25551 14.625 4.5 13.8695 4.5 12.9375V5.0625H1.89844C1.78194 5.0625 1.6875 5.15694 1.6875 5.27344V16.1016C1.6875 16.2181 1.78194 16.3125 1.89844 16.3125ZM6.39844 12.9375C6.28194 12.9375 6.1875 12.8431 6.1875 12.7266V1.89844C6.1875 1.78194 6.28194 1.6875 6.39844 1.6875H10.125V4.78125C10.125 5.24725 10.5028 5.625 10.9688 5.625H14.0625V12.7266C14.0625 12.8431 13.9681 12.9375 13.8516 12.9375H6.39844ZM11.8125 3.9375H14.0625V3.59888C14.0625 3.54293 14.0403 3.48927 14.0007 3.44971L12.3003 1.74927C12.2607 1.70972 12.2071 1.6875 12.1511 1.6875H11.8125V3.9375Z"
-                      fill="#3F85FB"
-                    />
-                  </svg>
-                  <p className="inline-block text-center items-center text-[#3F85FB] text-[14px] not-italic font-semibold leading-[24px]">
-                    Copy STK
-                  </p>
-                </button> */}
+                    <button className="flex justify-center gap-1 border px-2 py-1 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="18"
+                        viewBox="0 0 16 18"
+                        fill="none"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M13.4318 0.494262L15.2557 2.31824C15.5722 2.6347 15.75 3.06392 15.75 3.51148V12.9375C15.75 13.8695 14.9945 14.625 14.0625 14.625H11.25V16.3125C11.25 17.2445 10.4945 18 9.5625 18H1.6875C0.755508 18 0 17.2445 0 16.3125V5.0625C0 4.13051 0.755508 3.375 1.6875 3.375H4.5V1.6875C4.5 0.755508 5.25551 0 6.1875 0H12.2385C12.6861 2.34027e-06 13.1153 0.177794 13.4318 0.494262ZM1.89844 16.3125H9.35156C9.46806 16.3125 9.5625 16.2181 9.5625 16.1016V14.625H6.1875C5.25551 14.625 4.5 13.8695 4.5 12.9375V5.0625H1.89844C1.78194 5.0625 1.6875 5.15694 1.6875 5.27344V16.1016C1.6875 16.2181 1.78194 16.3125 1.89844 16.3125ZM6.39844 12.9375C6.28194 12.9375 6.1875 12.8431 6.1875 12.7266V1.89844C6.1875 1.78194 6.28194 1.6875 6.39844 1.6875H10.125V4.78125C10.125 5.24725 10.5028 5.625 10.9688 5.625H14.0625V12.7266C14.0625 12.8431 13.9681 12.9375 13.8516 12.9375H6.39844ZM11.8125 3.9375H14.0625V3.59888C14.0625 3.54293 14.0403 3.48927 14.0007 3.44971L12.3003 1.74927C12.2607 1.70972 12.2071 1.6875 12.1511 1.6875H11.8125V3.9375Z"
+                          fill="#3F85FB"
+                        />
+                      </svg>
+                      <p className="inline-block text-center items-center text-[#3F85FB] text-[14px] not-italic font-semibold leading-[24px]">
+                        Copy STK
+                      </p>
+                    </button>
+                  </CopyToClipboard>
                 </div>
                 <p className="text-black text-[16px] not-italic font-normal leading-[24px]">
                   Ngân Hàng:&nbsp;
