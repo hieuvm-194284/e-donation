@@ -203,16 +203,25 @@ const DonationInfo = () => {
             <Modal
               open={isModalOpen}
               onCancel={handleCancel}
+              closeIcon={null}
+              mask={true}
               wrapClassName="max-w-xl"
               centered
               footer={[
-                <div key="footer" className="flex justify-center item-center">
+                <div key="footer" className="flex justify-center gap-4">
+                  <button
+                    type="button"
+                    className="w-1/2 text-white bg-[#9D9D9D] hover:bg-gray-600 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
+                    onClick={handleCancel}
+                  >
+                    Hủy
+                  </button>
                   <button
                     type="button"
                     className="w-1/2 text-white bg-[#3F85FB] hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
                     onClick={() => handleOk(`mailto:${donationDetail?.email}`)}
                   >
-                    Gửi email
+                    Đồng ý
                   </button>
                 </div>,
               ]}
