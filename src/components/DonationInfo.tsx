@@ -211,18 +211,18 @@ const DonationInfo = () => {
                 <div key="footer" className="flex justify-center gap-4">
                   <button
                     type="button"
-                    className="w-1/2 text-white bg-[#9D9D9D] hover:bg-gray-600 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
+                    className="w-1/2 text-white bg-[#3F85FB] text-center hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
                     onClick={handleCancel}
                   >
-                    Hủy
+                    Tôi đã hiểu
                   </button>
-                  <a
+                  {/* <a
                     href={`mailto:${donationDetail?.email}`}
                     className="w-1/2 text-white bg-[#3F85FB] text-center hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
                     onClick={handleOk}
                   >
                     Gửi email
-                  </a>
+                  </a> */}
                 </div>,
               ]}
             >
