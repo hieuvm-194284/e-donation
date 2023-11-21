@@ -24,9 +24,8 @@ const DonationInfo = () => {
     setIsModalOpen(true);
   };
 
-  const handleOk = (mailto: string) => {
+  const handleOk = () => {
     setIsModalOpen(false);
-    window.location.href = mailto;
   };
 
   const handleCancel = () => {
@@ -35,7 +34,7 @@ const DonationInfo = () => {
 
   return (
     <>
-      <div id="modal-wrapper" className="max-w-xl bg-white">
+      <div id="modal-wrapper" className={`max-w-xl bg-white z-0`}>
         <div className="flex justify-between bg-[#005CAC] max-w-xl w-full p-4">
           <button onClick={() => router.push(`/donation-detail/${id}`)}>
             <svg
@@ -206,6 +205,7 @@ const DonationInfo = () => {
               closeIcon={null}
               mask={true}
               wrapClassName="max-w-xl"
+              zIndex={1000}
               centered
               footer={[
                 <div key="footer" className="flex justify-center gap-4">
@@ -216,13 +216,13 @@ const DonationInfo = () => {
                   >
                     Hủy
                   </button>
-                  <button
-                    type="button"
-                    className="w-1/2 text-white bg-[#3F85FB] hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
-                    onClick={() => handleOk(`mailto:${donationDetail?.email}`)}
+                  <a
+                    href={`mailto:${donationDetail?.email}`}
+                    className="w-1/2 text-white bg-[#3F85FB] text-center hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
+                    onClick={handleOk}
                   >
                     Đồng ý
-                  </button>
+                  </a>
                 </div>,
               ]}
             >
