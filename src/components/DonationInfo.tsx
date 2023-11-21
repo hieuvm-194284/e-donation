@@ -221,7 +221,7 @@ const DonationInfo = () => {
                     className="w-1/2 text-white bg-[#3F85FB] text-center hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
                     onClick={handleOk}
                   >
-                    Đồng ý
+                    Gửi email
                   </a>
                 </div>,
               ]}
