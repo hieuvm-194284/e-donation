@@ -36,7 +36,7 @@ const DonationDetail = () => {
     <>
       <div className="max-w-xl bg-white">
         <div className="flex justify-between bg-[#005CAC] max-w-xl w-full p-4">
-          <button onClick={() => router.push("/")}>
+          <div onClick={() => router.push("/")}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -51,7 +51,7 @@ const DonationDetail = () => {
                 fill="white"
               />
             </svg>
-          </button>
+          </div>
 
           <h3 className="text-white text-[17px] not-italic font-semibold leading-[21px]">
             {donationDetail?.title || "Quyên góp"}
@@ -96,20 +96,18 @@ const DonationDetail = () => {
                 centered
                 footer={[
                   <div key="footer" className="flex justify-center gap-4">
-                    <button
-                      type="button"
-                      className="w-1/2 text-white bg-[#9D9D9D] hover:bg-gray-600 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
+                    <div
+                      className="w-1/2 text-center text-white bg-[#9D9D9D] hover:bg-gray-600 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
                       onClick={handleCancel}
                     >
                       Hủy
-                    </button>
-                    <button
-                      type="button"
-                      className="w-1/2 text-white bg-[#3F85FB] hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
+                    </div>
+                    <div
+                      className="w-1/2 text-center text-white bg-[#3F85FB] hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
                       onClick={handleOk}
                     >
                       Đồng ý
-                    </button>
+                    </div>
                   </div>,
                 ]}
               >
@@ -170,13 +168,12 @@ const DonationDetail = () => {
               </Modal>
             </div>
             <div className="flex justify-center items-center bg-white fixed bottom-0 w-full max-w-xl p-4">
-              <button
-                type="button"
-                className="w-1/2 text-white bg-[#3F85FB] hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
+              <div
+                className="w-1/2 text-center text-white bg-[#3F85FB] hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
                 onClick={showModal}
               >
                 Quyên góp
-              </button>
+              </div>
             </div>
           </>
         )}

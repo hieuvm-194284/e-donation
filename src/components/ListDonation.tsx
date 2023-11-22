@@ -101,15 +101,14 @@ const ListDonations = () => {
                       </h3>
                     </div>
                     <div className="flex justify-center items-center">
-                      <button
-                        type="button"
-                        className="w-1/2 text-white bg-[#3F85FB] hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
+                      <div
+                        className="w-1/2 text-center text-white bg-[#3F85FB] hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
                         onClick={() =>
                           router.push(`donation-detail/${item?.id}`)
                         }
                       >
                         Quyên góp
-                      </button>
+                      </div>
                     </div>
                   </div>
                 ))}

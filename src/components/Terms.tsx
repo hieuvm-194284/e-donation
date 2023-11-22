@@ -4,7 +4,7 @@ const Terms = () => {
   return (
     <>
       <div className="flex justify-between bg-[#005CAC] max-w-xl w-full p-4">
-        <button onClick={() => router.back()}>
+        <div onClick={() => router.back()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -19,7 +19,7 @@ const Terms = () => {
               fill="white"
             />
           </svg>
-        </button>
+        </div>
 
         <h3 className="text-white text-[17px] not-italic font-semibold leading-[21px]">
           Điều khoản sử dụng

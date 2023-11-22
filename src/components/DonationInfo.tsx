@@ -1,7 +1,6 @@
 import { getDonationDetailRequest } from "@/api/donation/donationRequest";
-import { Button, Modal, QRCode, Skeleton } from "antd";
+import { Modal, QRCode, Skeleton } from "antd";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -36,7 +35,7 @@ const DonationInfo = () => {
     <>
       <div id="modal-wrapper" className={`max-w-xl bg-white z-0`}>
         <div className="flex justify-between bg-[#005CAC] max-w-xl w-full p-4">
-          <button onClick={() => router.push(`/donation-detail/${id}`)}>
+          <div onClick={() => router.push(`/donation-detail/${id}`)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -51,7 +50,7 @@ const DonationInfo = () => {
                 fill="white"
               />
             </svg>
-          </button>
+          </div>
 
           <h3 className="text-white text-[17px] not-italic font-semibold leading-[21px]">
             Quyên góp
@@ -132,7 +131,7 @@ const DonationInfo = () => {
                     </span>
                   </p>
                   <CopyToClipboard text={donationDetail?.acount_bank}>
-                    <button className="flex justify-center gap-1 border px-2 py-1 rounded-full">
+                    <div className="flex justify-center gap-1 border px-2 py-1 rounded-full">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -150,7 +149,7 @@ const DonationInfo = () => {
                       <p className="inline-block text-center items-center text-[#3F85FB] text-[14px] not-italic font-semibold leading-[24px]">
                         Copy STK
                       </p>
-                    </button>
+                    </div>
                   </CopyToClipboard>
                 </div>
                 <p className="text-black text-[16px] not-italic font-normal leading-[24px]">
@@ -168,13 +167,12 @@ const DonationInfo = () => {
               </div>
             </div>
             <div>
-              <button
-                type="button"
+              <div
                 className="w-full text-white text-sm bg-[#3F85FB] hover:bg-blue-800 font-semibold rounded-lg px-5 py-2.5 me-2 mb-2"
                 onClick={showModal}
               >
                 Tôi xác nhận đã chuyển khoản thành công
-              </button>
+              </div>
             </div>
             <div className="flex justify-between gap-2">
               <div>
@@ -209,20 +207,12 @@ const DonationInfo = () => {
               centered
               footer={[
                 <div key="footer" className="flex justify-center gap-4">
-                  <button
-                    type="button"
+                  <div
                     className="w-1/2 text-white bg-[#3F85FB] text-center hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
                     onClick={handleCancel}
                   >
                     Tôi đã hiểu
-                  </button>
-                  {/* <a
-                    href={`mailto:${donationDetail?.email}`}
-                    className="w-1/2 text-white bg-[#3F85FB] text-center hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
-                    onClick={handleOk}
-                  >
-                    Gửi email
-                  </a> */}
+                  </div>
                 </div>,
               ]}
             >
