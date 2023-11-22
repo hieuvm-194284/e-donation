@@ -23,11 +23,11 @@ const ListDonations = () => {
   return (
     <>
       <div className="max-w-xl">
-        <div className="flex justify-center bg-[#005CAC] max-w-xl w-full p-4">
+        {/* <div className="flex justify-center bg-[#005CAC] max-w-xl w-full p-4">
           <h3 className="text-white text-center text-[17px] not-italic font-semibold leading-[21px]">
             Quyên góp
           </h3>
-        </div>
+        </div> */}
         <div className="flex flex-col gap-[10px] justify-between">
           <div className="flex flex-col gap-2 justify-between bg-white p-4 border border-y-[1px] border-solid">
             <h3 className="text-black text-[18px] not-italic font-semibold leading-[27px]">
@@ -101,14 +101,15 @@ const ListDonations = () => {
                       </h3>
                     </div>
                     <div className="flex justify-center items-center">
-                      <div
+                      <button
+                        type="button"
                         className="w-1/2 text-center text-white bg-[#3F85FB] hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
                         onClick={() =>
                           router.push(`donation-detail/${item?.id}`)
                         }
                       >
                         Quyên góp
-                      </div>
+                      </button>
                     </div>
                   </div>
                 ))}

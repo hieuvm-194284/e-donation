@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 import { useEffect, useState } from "react";
+import { disableBodyScroll, enableBodyScroll } from "@/utils/scroll";
 
 const DonationDetail = () => {
   const router = useRouter();
@@ -32,11 +33,19 @@ const DonationDetail = () => {
     setIsModalOpen(false);
   };
 
+  useEffect(() => {
+    if (isModalOpen) {
+      disableBodyScroll();
+    } else {
+      enableBodyScroll();
+    }
+  }, [isModalOpen]);
+
   return (
     <>
       <div className="max-w-xl bg-white">
         <div className="flex justify-between bg-[#005CAC] max-w-xl w-full p-4">
-          <div onClick={() => router.push("/")}>
+          <button type="button" onClick={() => router.push("/")}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -51,7 +60,7 @@ const DonationDetail = () => {
                 fill="white"
               />
             </svg>
-          </div>
+          </button>
 
           <h3 className="text-white text-[17px] not-italic font-semibold leading-[21px]">
             {donationDetail?.title || "Quyên góp"}
@@ -78,7 +87,7 @@ const DonationDetail = () => {
                   {donationDetail?.title}
                 </h3>
               </div>
-              <div className="mb-10">
+              <div className="mb-16">
                 <div
                   className="text-black not-italic font-normal"
                   dangerouslySetInnerHTML={{
@@ -96,18 +105,21 @@ const DonationDetail = () => {
                 centered
                 footer={[
                   <div key="footer" className="flex justify-center gap-4">
-                    <div
+                    <button
+                      type="button"
                       className="w-1/2 text-center text-white bg-[#9D9D9D] hover:bg-gray-600 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
                       onClick={handleCancel}
                     >
                       Hủy
-                    </div>
-                    <div
+                    </button>
+                    <button
+                      id="modal"
+                      type="button"
                       className="w-1/2 text-center text-white bg-[#3F85FB] hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
                       onClick={handleOk}
                     >
                       Đồng ý
-                    </div>
+                    </button>
                   </div>,
                 ]}
               >
@@ -160,6 +172,7 @@ const DonationDetail = () => {
                   </p>
                   <Link
                     className="text-[#007AFF] text-[16px] not-italic font-medium leading-4 underline underline-offset-4"
+                    onClick={() => setIsModalOpen(false)}
                     href={"/terms"}
                   >
                     Điều khoản & chính sách
@@ -175,6 +188,7 @@ const DonationDetail = () => {
                 Quyên góp
               </div>
             </div>
+            <div className="h-full"></div>
           </>
         )}
       </div>

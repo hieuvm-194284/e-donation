@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useEffect, useState } from "react";
+import { disableBodyScroll, enableBodyScroll } from "@/utils/scroll";
 
 const DonationInfo = () => {
   const router = useRouter();
@@ -31,11 +32,22 @@ const DonationInfo = () => {
     setIsModalOpen(false);
   };
 
+  useEffect(() => {
+    if (isModalOpen) {
+      disableBodyScroll();
+    } else {
+      enableBodyScroll();
+    }
+  }, [isModalOpen]);
+
   return (
     <>
-      <div id="modal-wrapper" className={`max-w-xl bg-white z-0`}>
+      <div id="modal-wrapper" className={`max-w-xl bg-white max-h-fit overflow-y-scroll`}>
         <div className="flex justify-between bg-[#005CAC] max-w-xl w-full p-4">
-          <div onClick={() => router.push(`/donation-detail/${id}`)}>
+          <button
+            type="button"
+            onClick={() => router.push(`/donation-detail/${id}`)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -50,7 +62,7 @@ const DonationInfo = () => {
                 fill="white"
               />
             </svg>
-          </div>
+          </button>
 
           <h3 className="text-white text-[17px] not-italic font-semibold leading-[21px]">
             Quyên góp
@@ -167,12 +179,13 @@ const DonationInfo = () => {
               </div>
             </div>
             <div>
-              <div
+              <button
+                type="button"
                 className="w-full text-white text-sm bg-[#3F85FB] hover:bg-blue-800 font-semibold rounded-lg px-5 py-2.5 me-2 mb-2"
                 onClick={showModal}
               >
                 Tôi xác nhận đã chuyển khoản thành công
-              </div>
+              </button>
             </div>
             <div className="flex justify-between gap-2">
               <div>
@@ -200,24 +213,25 @@ const DonationInfo = () => {
             <Modal
               open={isModalOpen}
               onCancel={handleCancel}
+              onOk={handleOk}
               closeIcon={null}
               mask={true}
               wrapClassName="max-w-xl"
-              zIndex={1000}
               centered
               footer={[
-                <div key="footer" className="flex justify-center gap-4">
-                  <div
-                    className="w-1/2 text-white bg-[#3F85FB] text-center hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-2 uppercase"
-                    onClick={handleCancel}
+                <div key="footer" className="flex justify-center">
+                  <button
+                    type="button"
+                    className="w-1/2 text-white bg-[#3F85FB] text-center hover:bg-blue-800 font-semibold rounded-lg text-sm px-5 py-2.5 me-2 mb-4 uppercase"
+                    onClick={handleOk}
                   >
                     Tôi đã hiểu
-                  </div>
+                  </button>
                 </div>,
               ]}
             >
-              <div className="flex flex-col justify-between -mx-6 -mt-5 gap-4 mb-6">
-                <div className="flex flex-col justify-between items-center text-center gap-4">
+              <div className="flex flex-col justify-between -mx-6 -mt-5 gap-2 mb-4">
+                <div className="flex flex-col justify-between items-center text-center gap-2">
                   <div className="flex justify-center border rounded-b-none rounded-lg relative z-1 w-full h-[215px]">
                     <Image
                       src="/images/thankyou.png"
@@ -229,7 +243,7 @@ const DonationInfo = () => {
                     />
                   </div>
 
-                  <p className="text-[#222222] text-[18px] not-italic font-semibold leading-[27px] px-5">
+                  <p className="text-[#222222] text-[18px] not-italic font-semibold leading-[27px] px-3">
                     Cảm ơn bạn - Bạn vừa làm một điều tốt để giúp hàng ngàn
                     người cơ nhỡ ngoài kia.
                   </p>
