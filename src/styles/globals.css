@@ -16,6 +16,10 @@
   }
 }
 
+a, button {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
